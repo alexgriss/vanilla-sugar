@@ -49,17 +49,17 @@ import { Box, Button, Text, HStack, VStack } from "vanilla-sugar";
 
 function App() {
   return (
-    <VStack gap="16" p="24">
-      <Text fontSize="xl" fontWeight="bold">
+    <VStack spacing={16} p={24}>
+      <Text fs="xl" fw="bold">
         Welcome to Vanilla Sugar
       </Text>
 
-      <HStack gap="12">
-        <Button variant="primary" size="md">
+      <HStack spacing={12}>
+        <Button variant="primary" size="medium">
           Primary Button
         </Button>
 
-        <Button variant="secondary" size="md">
+        <Button variant="secondary" size="medium">
           Secondary Button
         </Button>
       </HStack>
@@ -74,7 +74,7 @@ function App() {
 import { Box, Flex, Center, HStack, VStack } from 'vanilla-sugar';
 
 // Flexible container
-<Flex direction="row" alignItems="center" justifyContent="space-between">
+<Flex fd="row" ai="center" jc="between">
   <Box>Left content</Box>
   <Box>Right content</Box>
 </Flex>
@@ -85,13 +85,13 @@ import { Box, Flex, Center, HStack, VStack } from 'vanilla-sugar';
 </Center>
 
 // Horizontal stack
-<HStack gap="16" alignItems="center">
+<HStack spacing={16} ai="center">
   <Text>Item 1</Text>
   <Text>Item 2</Text>
 </HStack>
 
 // Vertical stack
-<VStack gap="12">
+<VStack spacing={12}>
   <Text>Top item</Text>
   <Text>Bottom item</Text>
 </VStack>
@@ -102,11 +102,11 @@ import { Box, Flex, Center, HStack, VStack } from 'vanilla-sugar';
 ```tsx
 import { Text } from 'vanilla-sugar';
 
-<Text fontSize="lg" fontWeight="bold" color="primary">
+<Text fs="lg" fw="bold" color="primary">
   Large bold text
 </Text>
 
-<Text fontSize="md" lineHeight="1.5">
+<Text fs="md" lh="lg">
   Regular paragraph text with good line height
 </Text>
 ```
@@ -121,7 +121,7 @@ import SearchIcon from './search-icon.svg?react';
   Add Item
 </Button>
 
-<IconButton size="md">
+<IconButton size="medium">
   <SearchIcon width={20} height={20} />
 </IconButton>
 ```
@@ -141,6 +141,21 @@ import SearchIcon from './search-icon.svg?react';
 - `0` to `32` - Consistent spacing values in pixels
 - Responsive utilities for mobile, tablet, and desktop
 
+### Button Variants
+
+- `primary` - Primary brand color
+- `secondary` - Secondary color
+- `tertiary` - Light background
+- `white` - White background
+- `outline` - Outlined style
+- `ghost` - Transparent background
+
+### Button Sizes
+
+- `small` - Small button
+- `medium` - Medium button (default)
+- `large` - Large button
+
 ### Typography tokens
 
 - **Font Families**: Manrope (Google Fonts)
@@ -153,6 +168,17 @@ import SearchIcon from './search-icon.svg?react';
 - `mobile`: 0em - 768px
 - `tablet`: 768px - 1024px
 - `desktop`: 1024px+
+
+### Available Props
+
+All components support these atomic CSS props:
+
+**Spacing**: `p`, `px`, `py`, `pt`, `pb`, `pl`, `pr`, `m`, `mx`, `my`, `mt`, `mb`, `ml`, `mr`
+**Typography**: `fs` (fontSize), `fw` (fontWeight), `ff` (fontFamily), `lh` (lineHeight), `ta` (textAlign)
+**Colors**: `color`, `bg` (backgroundColor), `bc` (borderColor)
+**Layout**: `gap`, `fd` (flexDirection), `ai` (alignItems), `jc` (justifyContent), `br` (borderRadius)
+
+**Responsive**: All props support responsive variants: `mobile`, `tablet`, `desktop`
 
 ## 🏗 Project Structure
 

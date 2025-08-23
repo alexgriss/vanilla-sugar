@@ -9,11 +9,11 @@ export const App = () => {
   return (
     <Box p={24}>
       <VStack spacing={16} ai="center">
-        <Text fontSize="2xl" fontWeight="bold" color="primary">
+        <Text fs="2xl" fw="bold" color="primary">
           Vanilla Sugar Demo
         </Text>
 
-        <Text fontSize="md" color="secondary">
+        <Text fs="md" color="secondary">
           A modern, type-safe UI component library
         </Text>
 
