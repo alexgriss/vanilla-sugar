@@ -1,12 +1,12 @@
-import { Flex, type FlexProps } from "../flex";
+import { Flex, type IFlexProps } from "../flex";
 
 import { vars } from "../../../theme.css";
 
-export interface VStackProps extends FlexProps {
+export interface IVStackProps extends IFlexProps {
   spacing?: keyof typeof vars.spacings;
 }
 
-export const VStack = (props: VStackProps) => {
+export const VStack = (props: IVStackProps) => {
   const { className, children, spacing, ...restProps } = props;
 
   const vStackProps = {

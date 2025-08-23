@@ -1,5 +1,5 @@
-export { Box, type BoxProps } from "./box";
-export { Flex, type FlexProps } from "./flex";
-export { HStack, type HStackProps } from "./h-stack";
-export { VStack, type VStackProps } from "./v-stack";
-export { Center, type CenterProps } from "./center";
+export { Box, type IBoxProps } from "./box";
+export { Flex, type IFlexProps } from "./flex";
+export { HStack, type IHStackProps } from "./h-stack";
+export { VStack, type IVStackProps } from "./v-stack";
+export { Center, type ICenterProps } from "./center";

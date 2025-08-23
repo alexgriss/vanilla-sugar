@@ -1,10 +1,10 @@
-import { recipe } from "@vanilla-extract/recipes";
 import { style, styleVariants } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
+
+import { buttonSizes, buttonVariants } from "../types";
 
 import { sprinkles } from "../../../sprinkles.css";
 import { vars } from "../../../theme.css";
-
-import { buttonSizes, buttonVariants } from "../types";
 
 const disabledStyles = styleVariants({
   primary: {
@@ -33,7 +33,6 @@ const disabledStyles = styleVariants({
 
 const baseButtonStyles = [
   style({
-    fontWeight: "bold",
     display: "inline-flex",
     justifyContent: "center",
     alignItems: "center",

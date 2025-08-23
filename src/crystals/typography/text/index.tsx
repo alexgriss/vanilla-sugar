@@ -1,10 +1,10 @@
 import { type ElementType } from "react";
 
-import { Box, type BoxProps } from "../../layout";
+import { Box, type IBoxProps } from "../../layout";
 
-export interface TextProps extends BoxProps<ElementType> {}
+export interface ITextProps extends IBoxProps<ElementType> {}
 
-export const Text = (props: TextProps) => {
+export const Text = (props: ITextProps) => {
   const { className, children, as = "p", ...restProps } = props;
 
   const textProps = {

@@ -1,6 +1,7 @@
 import { globalStyle } from "@vanilla-extract/css";
 
 import "./reset.css";
+import "./fonts.css";
 
 globalStyle("html, body", {
   margin: 0,

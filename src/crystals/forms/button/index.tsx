@@ -1,13 +1,18 @@
-import { cloneElement, type ElementType, type ReactElement, type ReactNode } from "react";
-
 import clsx from "clsx";
 
-import { Box, type BoxProps } from "../../layout";
+import {
+  cloneElement,
+  type ElementType,
+  type ReactElement,
+  type ReactNode,
+} from "react";
+
+import { Box, type IBoxProps } from "../../layout";
 import { type ButtonSize, type ButtonVariant } from "../types";
 
 import { button, buttonIcon } from "./button.css";
 
-export type ButtonProps = BoxProps & {
+export type IButtonProps = IBoxProps & {
   variant?: ButtonVariant;
   size?: ButtonSize;
   onlyIcon?: boolean;
@@ -18,7 +23,7 @@ export type ButtonProps = BoxProps & {
   children?: ReactNode;
 };
 
-export const Button = (props: ButtonProps) => {
+export const Button = (props: IButtonProps) => {
   const {
     variant,
     size,
@@ -57,11 +62,11 @@ export const Button = (props: ButtonProps) => {
   );
 };
 
-export type IconButtonProps = Omit<ButtonProps, "children" | "onlyIcon"> & {
+export type IIconButtonProps = Omit<IButtonProps, "children" | "onlyIcon"> & {
   children: ReactElement;
 };
 
-export const IconButton = (props: IconButtonProps) => {
+export const IconButton = (props: IIconButtonProps) => {
   const { size, children, ...restProps } = props;
 
   const buttonIconClass = buttonIcon({ size });

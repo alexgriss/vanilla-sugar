@@ -1,8 +1,8 @@
-import { Box, type BoxProps } from "../box";
+import { Box, type IBoxProps } from "../box";
 
-export interface FlexProps extends BoxProps {}
+export interface IFlexProps extends IBoxProps {}
 
-export const Flex = (props: FlexProps) => {
+export const Flex = (props: IFlexProps) => {
   const { className, children, ...restProps } = props;
 
   const flexProps = {

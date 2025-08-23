@@ -1,12 +1,12 @@
-import { Flex, type FlexProps } from "../flex";
+import { Flex, type IFlexProps } from "../flex";
 
 import { vars } from "../../../theme.css";
 
-export interface HStackProps extends FlexProps {
+export interface IHStackProps extends IFlexProps {
   spacing?: keyof typeof vars.spacings;
 }
 
-export const HStack = (props: HStackProps) => {
+export const HStack = (props: IHStackProps) => {
   const { className, children, spacing, ...restProps } = props;
 
   const hStackProps = {

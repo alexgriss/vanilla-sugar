@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import {
   type ComponentPropsWithoutRef,
   type CSSProperties,
@@ -6,13 +8,12 @@ import {
   type ReactNode,
 } from "react";
 
-import clsx from "clsx";
-
 import { extractSprinklesProps } from "../../../extract-sprinkles-props";
+
 import { type Sprinkles, sprinkles } from "../../../sprinkles.css";
 import { fullWidthStyle } from "../../../utilities.css";
 
-export type BoxProps<Tag extends ElementType = "div"> = {
+export type IBoxProps<Tag extends ElementType = "div"> = {
   as?: Tag;
   className?: string | string[];
   children?: ReactNode;
@@ -23,9 +24,8 @@ export type BoxProps<Tag extends ElementType = "div"> = {
 
 export const Box = forwardRef(
   <Tag extends ElementType = "div">(
-    { as, className, children, fullWidth, ...rest }: BoxProps<Tag>,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ref: React.ForwardedRef<any>
+    { as, className, children, fullWidth, ...rest }: IBoxProps<Tag>,
+    ref: React.ForwardedRef<HTMLDivElement>
   ) => {
     const Component = as || "div";
 
