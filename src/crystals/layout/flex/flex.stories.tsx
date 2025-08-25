@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
 import { Button } from "../../forms";
+import { Text } from "../../typography";
 
 import { Flex, type IFlexProps } from ".";
 
@@ -32,6 +33,33 @@ export const Vertical = (args: IFlexProps) => (
     <Button variant="secondary" size="large">
       Button 2
     </Button>
+  </Flex>
+);
+
+export const Centered = (args: IFlexProps) => (
+  <Flex w={256} h={256} ai="center" jc="center" {...args}>
+    <Button variant="primary" size="large">
+      Button 1
+    </Button>
+  </Flex>
+);
+
+export const WithSizes = (args: IFlexProps) => (
+  <Flex w={192} h={96} bg="tertiary" ai="center" jc="center" {...args}>
+    <Text>192x96</Text>
+  </Flex>
+);
+
+export const ResponsiveSizes = (args: IFlexProps) => (
+  <Flex
+    w={{ mobile: 96, tablet: 192, desktop: 256 }}
+    h={{ mobile: 48, tablet: 96, desktop: 128 }}
+    bg="primary"
+    ai="center"
+    jc="center"
+    {...args}
+  >
+    <Text color="white">Responsive</Text>
   </Flex>
 );
 

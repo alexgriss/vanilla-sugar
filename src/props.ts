@@ -61,3 +61,12 @@ export const spacingProps = {
   paddingBottom: vars.spacings,
   borderRadius: vars.spacings,
 } as const;
+
+export const sizeProps = {
+  width: vars.sizes,
+  height: vars.sizes,
+  minWidth: vars.sizes,
+  maxWidth: vars.sizes,
+  minHeight: vars.sizes,
+  maxHeight: vars.sizes,
+} as const;

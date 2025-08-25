@@ -1,6 +1,12 @@
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 
-import { colorProps, flexProps, fontProps, spacingProps } from "./props";
+import {
+  colorProps,
+  flexProps,
+  fontProps,
+  sizeProps,
+  spacingProps,
+} from "./props";
 
 const colorProperties = defineProperties({
   properties: colorProps,
@@ -26,6 +32,7 @@ const responsiveProperties = defineProperties({
   properties: {
     ...spacingProps,
     ...flexProps,
+    ...sizeProps,
   },
   conditions: {
     mobile: {},
@@ -56,6 +63,13 @@ const responsiveProperties = defineProperties({
     fd: ["flexDirection"],
     ai: ["alignItems"],
     jc: ["justifyContent"],
+
+    w: ["width"],
+    h: ["height"],
+    minW: ["minWidth"],
+    maxW: ["maxWidth"],
+    minH: ["minHeight"],
+    maxH: ["maxHeight"],
   },
 });
 
