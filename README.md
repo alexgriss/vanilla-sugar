@@ -95,6 +95,49 @@ import { Box, Flex, Center, HStack, VStack } from 'vanilla-sugar';
   <Text>Top item</Text>
   <Text>Bottom item</Text>
 </VStack>
+
+// With sizes
+<Box w={192} h={96} bg="tertiary" p={16}>
+  <Text>192x96 container</Text>
+</Box>
+
+// Responsive sizes
+<Box 
+  w={{ mobile: 96, tablet: 192, desktop: 256 }}
+  h={{ mobile: 48, tablet: 96, desktop: 128 }}
+  bg="primary"
+>
+  <Text color="white">Responsive container</Text>
+</Box>
+```
+
+### Sizing
+
+```tsx
+import { Box, Flex } from 'vanilla-sugar';
+
+// Fixed sizes
+<Box w={192} h={96} bg="tertiary">
+  Fixed size container
+</Box>
+
+// Responsive sizes
+<Box
+  w={{ mobile: 96, tablet: 192, desktop: 256 }}
+  h={{ mobile: 48, tablet: 96, desktop: 128 }}
+  bg="primary"
+>
+  Responsive container
+</Box>
+
+// Special values
+<Box w="full" h="auto">Full width</Box>
+<Box w="fit" h="screen">Fit content, full height</Box>
+
+// Min/Max constraints
+<Box minW={128} maxW={256} w="full">
+  Constrained width
+</Box>
 ```
 
 ### Typography
@@ -141,6 +184,12 @@ import SearchIcon from './search-icon.svg?react';
 - `0` to `32` - Consistent spacing values in pixels
 - Responsive utilities for mobile, tablet, and desktop
 
+### Size Scale
+
+- `0` to `256` - Consistent size values in pixels (0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192, 224, 256)
+- Special values: `auto`, `full` (100%), `screen` (100vw), `min` (min-content), `max` (max-content), `fit` (fit-content)
+- Responsive utilities for mobile, tablet, and desktop
+
 ### Button Variants
 
 - `primary` - Primary brand color
@@ -177,6 +226,7 @@ All components support these atomic CSS props:
 **Typography**: `fs` (fontSize), `fw` (fontWeight), `ff` (fontFamily), `lh` (lineHeight), `ta` (textAlign)
 **Colors**: `color`, `bg` (backgroundColor), `bc` (borderColor)
 **Layout**: `gap`, `fd` (flexDirection), `ai` (alignItems), `jc` (justifyContent), `br` (borderRadius)
+**Sizes**: `w` (width), `h` (height), `minW` (minWidth), `maxW` (maxWidth), `minH` (minHeight), `maxH` (maxHeight)
 
 **Responsive**: All props support responsive variants: `mobile`, `tablet`, `desktop`
 
@@ -194,7 +244,6 @@ src/
 ├── props.ts           # Type definitions for props
 ├── global.css.ts      # Global styles and fonts
 ├── reset.css.ts       # CSS reset
-├── utilities.css.ts   # Utility styles
 ├── extract-sprinkles-props.ts # Sprinkles props extraction
 └── index.ts           # Main exports
 ```
