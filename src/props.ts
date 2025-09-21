@@ -8,7 +8,6 @@ export const colorProps = {
 
 export const flexProps = {
   gap: vars.spacings,
-
   display: [
     "none",
     "inline",
@@ -42,7 +41,6 @@ export const fontProps = {
   fontWeight: vars.fontWeights,
   fontSize: vars.fontSizes,
   lineHeight: vars.lineHeights,
-
   fontStyle: ["normal", "italic"],
   textAlign: ["left", "center", "right", "justify"],
   textTransform: ["none", "uppercase", "lowercase", "capitalize"],

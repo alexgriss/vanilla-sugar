@@ -102,7 +102,7 @@ import { Box, Flex, Center, HStack, VStack } from 'vanilla-sugar';
 </Box>
 
 // Responsive sizes
-<Box 
+<Box
   w={{ mobile: 96, tablet: 192, desktop: 256 }}
   h={{ mobile: 48, tablet: 96, desktop: 128 }}
   bg="primary"
