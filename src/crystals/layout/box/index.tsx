@@ -9,7 +9,6 @@ import {
 } from "react";
 
 import { extractSprinklesProps } from "../../../extract-sprinkles-props";
-
 import { type Sprinkles, sprinkles } from "../../../sprinkles.css";
 
 type AsProp<C extends ElementType> = {

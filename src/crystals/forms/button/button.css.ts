@@ -71,39 +71,6 @@ const secondaryStyles = [
   }),
 ];
 
-const tertiaryStyles = [
-  sprinkles({ bg: "tertiary", color: "secondary" }),
-  disabledStyles.primary,
-  style({
-    selectors: {
-      "&:hover:not(:disabled)": {
-        backgroundColor: vars.colors.tertiaryHover,
-      },
-    },
-  }),
-];
-
-const whiteStyles = [
-  sprinkles({ bg: "white", color: "secondary" }),
-  disabledStyles.primary,
-];
-
-const outlineStyles = [
-  sprinkles({ bg: "transparent", color: "secondary" }),
-  disabledStyles.secondary,
-  style({
-    border: "1px solid",
-    borderColor: vars.colors.tertiary,
-  }),
-  style({
-    selectors: {
-      "&:hover:not(:disabled)": {
-        borderColor: vars.colors.tertiaryHover,
-      },
-    },
-  }),
-];
-
 const ghostStyles = [
   sprinkles({ bg: "transparent", color: "secondary" }),
   disabledStyles.secondary,
@@ -119,9 +86,6 @@ export const button = recipe({
     variant: {
       [buttonVariants.primary]: primaryStyles,
       [buttonVariants.secondary]: secondaryStyles,
-      [buttonVariants.tertiary]: tertiaryStyles,
-      [buttonVariants.white]: whiteStyles,
-      [buttonVariants.outline]: outlineStyles,
       [buttonVariants.ghost]: ghostStyles,
     },
     size: {

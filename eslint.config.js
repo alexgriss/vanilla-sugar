@@ -143,8 +143,6 @@ export default tseslint.config(
             ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
             // Relative imports (current directory)
             ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-            // CSS imports
-            ["^[^@].+\\.css$"],
             // SVG imports
             ["^.+\\.svg"],
           ],

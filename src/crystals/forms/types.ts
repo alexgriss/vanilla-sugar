@@ -1,9 +1,6 @@
 export const buttonVariants = {
   primary: "primary",
   secondary: "secondary",
-  tertiary: "tertiary",
-  white: "white",
-  outline: "outline",
   ghost: "ghost",
 } as const;
 

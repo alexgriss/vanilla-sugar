@@ -10,15 +10,14 @@ const breakpoints = {
 } as const;
 
 const colors = {
-  primary: "#78B64C",
-  primaryHover: darken(0.05, "#78B64C"),
-  secondary: "#3C3C3C",
-  secondaryHover: darken(0.05, "#3C3C3C"),
-  tertiary: "#EDEDED",
-  tertiaryHover: darken(0.05, "#EDEDED"),
+  primary: "#3ca1f5",
+  primaryHover: darken(0.05, "#3ca1f5"),
+  secondary: "#f1f5f9",
+  secondaryHover: darken(0.05, "#f1f5f9"),
   white: "#FFFFFF",
   disabled: "#C2C2C2",
-  whitesmoke: "#F5F5F5",
+  bgPrimary: "#F5F5F5",
+  bgSecondary: "#f6f7f9",
   transparent: "transparent",
 } as const;
 
@@ -65,11 +64,6 @@ const lineHeights = {
   sm: "1",
 } as const;
 
-const fontFamilies = {
-  manrope: "var(--font-manrope), Arial, sans-serif",
-  playfairDisplay: "var(--font-playfair-display), Arial, sans-serif",
-} as const;
-
 const sizes = {
   0: "0px",
   2: "2px",
@@ -114,6 +108,5 @@ export const tokens = {
   fontWeights,
   fontSizes,
   lineHeights,
-  fontFamilies,
   sizes,
 } as const;

@@ -1,7 +1,8 @@
+import "./reset.css";
+
 import { globalStyle } from "@vanilla-extract/css";
 
-import "./fonts.css";
-import "./reset.css";
+import { fontVars } from "./fonts.css";
 
 globalStyle("html, body", {
   margin: 0,
@@ -9,7 +10,7 @@ globalStyle("html, body", {
 });
 
 globalStyle("body", {
-  fontFamily: "var(--font-manrope) !important",
+  fontFamily: `${fontVars.IBMPlexSans} !important`,
 });
 
 globalStyle("body:has(dialog[open])", {

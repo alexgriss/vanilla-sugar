@@ -47,7 +47,7 @@ export const Centered = (args: IFlexProps) => (
 );
 
 export const WithSizes = (args: IFlexProps) => (
-  <Flex w={192} h={96} bg="tertiary" ai="center" jc="center" {...args}>
+  <Flex w={192} h={96} bg="primary" ai="center" jc="center" {...args}>
     <Text>192x96</Text>
   </Flex>
 );

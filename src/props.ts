@@ -37,7 +37,6 @@ export const flexProps = {
 } as const;
 
 export const fontProps = {
-  fontFamily: vars.fontFamilies,
   fontWeight: vars.fontWeights,
   fontSize: vars.fontSizes,
   lineHeight: vars.lineHeights,

@@ -1,6 +1,5 @@
-import { Flex, type IFlexProps } from "../flex";
-
 import { vars } from "../../../theme.css";
+import { Flex, type IFlexProps } from "../flex";
 
 export interface IHStackProps extends IFlexProps {
   spacing?: keyof typeof vars.spacings;

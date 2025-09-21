@@ -21,7 +21,6 @@ const fontProperties = defineProperties({
   shorthands: {
     fw: ["fontWeight"],
     fs: ["fontSize"],
-    ff: ["fontFamily"],
     lh: ["lineHeight"],
     ta: ["textAlign"],
     tt: ["textTransform"],

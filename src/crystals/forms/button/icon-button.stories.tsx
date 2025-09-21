@@ -48,7 +48,7 @@ export const Basic = (args: IIconButtonProps) => (
       <SearchIcon width={20} height={20} />
     </IconButton>
 
-    <IconButton variant="tertiary" size="small" {...args}>
+    <IconButton variant="ghost" size="small" {...args}>
       <SearchIcon width={20} height={20} />
     </IconButton>
   </ButtonContainer>
@@ -64,7 +64,7 @@ export const Disabled = (args: IIconButtonProps) => (
       <SearchIcon width={20} height={20} />
     </IconButton>
 
-    <IconButton variant="tertiary" size="small" disabled {...args}>
+    <IconButton variant="ghost" size="small" disabled {...args}>
       <SearchIcon width={20} height={20} />
     </IconButton>
   </ButtonContainer>

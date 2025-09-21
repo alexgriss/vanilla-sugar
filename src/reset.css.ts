@@ -1,7 +1,7 @@
 import { globalStyle } from "@vanilla-extract/css";
 
 globalStyle(
-  "*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *))",
+  "*:where(:not(html, body, iframe, canvas, img, svg, video, audio):not(svg *, symbol *))",
   {
     all: "unset",
     display: "revert",
