@@ -29,14 +29,14 @@ const config: StorybookConfig = {
         svgrOptions: {
           icon: true,
         },
-      })
+      }),
     );
 
     config.resolve = config.resolve || {};
     config.resolve.alias = config.resolve.alias || {};
     (config.resolve.alias as Record<string, string>)["@"] = path.resolve(
       __dirname,
-      "../src"
+      "../src",
     );
 
     return config;

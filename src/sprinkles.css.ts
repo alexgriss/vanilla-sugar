@@ -76,7 +76,7 @@ const responsiveProperties = defineProperties({
 export const sprinkles = createSprinkles(
   colorProperties,
   fontProperties,
-  responsiveProperties
+  responsiveProperties,
 );
 
 export type Sprinkles = Parameters<typeof sprinkles>[0];

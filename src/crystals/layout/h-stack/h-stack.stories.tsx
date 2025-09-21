@@ -18,6 +18,7 @@ export const Basic = (args: IHStackProps) => (
     <Button variant="primary" size="large">
       Button 1
     </Button>
+
     <Button variant="secondary" size="large">
       Button 2
     </Button>

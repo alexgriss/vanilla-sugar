@@ -5,7 +5,7 @@ globalStyle(
   {
     all: "unset",
     display: "revert",
-  }
+  },
 );
 
 globalStyle("*, *::before, *::after", {

@@ -66,8 +66,8 @@ const lineHeights = {
 } as const;
 
 const fontFamilies = {
-  manrope: `var(--font-manrope), Arial, sans-serif`,
-  playfairDisplay: `var(--font-playfair-display), Arial, sans-serif`,
+  manrope: "var(--font-manrope), Arial, sans-serif",
+  playfairDisplay: "var(--font-playfair-display), Arial, sans-serif",
 } as const;
 
 const sizes = {

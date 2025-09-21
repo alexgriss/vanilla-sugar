@@ -40,7 +40,7 @@ export type IBoxProps<Tag extends ElementType = "div"> =
 export const Box = forwardRef(
   <Tag extends ElementType = "div">(
     { as, className, children, ...rest }: IBoxProps<Tag>,
-    ref?: ForwardedRef<PolymorphicRef<Tag>>
+    ref?: ForwardedRef<PolymorphicRef<Tag>>,
   ) => {
     const Component = as || "div";
 
@@ -55,7 +55,7 @@ export const Box = forwardRef(
     };
 
     return <Component {...boxProps}>{children}</Component>;
-  }
+  },
 );
 
 Box.displayName = "Box";

@@ -1,0 +1,5 @@
+ignoredBuiltDependencies:
+  - esbuild
+
+overrides:
+  vanilla-sugar: link:../../../Library/pnpm/global/5/node_modules/vanilla-sugar

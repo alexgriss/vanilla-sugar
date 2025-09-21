@@ -21,7 +21,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
+    Story => (
       <div
         style={{
           fontFamily:

@@ -32,6 +32,57 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    lib: {
+      entry: path.resolve(dirname, "src/index.ts"),
+      name: "VanillaSugar",
+      fileName: format => `vanilla-sugar.${format}.js`,
+      formats: ["es", "umd"],
+    },
+    rollupOptions: {
+      external: [
+        "react",
+        "react-dom",
+        "@vanilla-extract/css",
+        "@vanilla-extract/recipes",
+        "@vanilla-extract/sprinkles",
+        "clsx",
+        "lodash",
+        "polished",
+      ],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "@vanilla-extract/css": "vanillaExtract",
+          "@vanilla-extract/recipes": "vanillaExtractRecipes",
+          "@vanilla-extract/sprinkles": "vanillaExtractSprinkles",
+          "clsx": "clsx",
+          "lodash": "lodash",
+          "polished": "polished",
+        },
+        // Минификация и оптимизация
+        manualChunks: undefined,
+      },
+    },
+    // Включаем минификацию
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ["console.log"],
+      },
+      mangle: {
+        safari10: true,
+      },
+    },
+    // Уменьшаем размер CSS
+    cssCodeSplit: false,
+    // Оптимизация для библиотеки
+    target: "esnext",
+    sourcemap: false,
+  },
   test: {
     projects: [
       {

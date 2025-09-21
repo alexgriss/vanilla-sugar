@@ -19,6 +19,7 @@ export const Horizontal = (args: IFlexProps) => (
     <Button variant="primary" size="large">
       Button 1
     </Button>
+
     <Button variant="secondary" size="large">
       Button 2
     </Button>
@@ -30,6 +31,7 @@ export const Vertical = (args: IFlexProps) => (
     <Button variant="primary" size="large">
       Button 1
     </Button>
+
     <Button variant="secondary" size="large">
       Button 2
     </Button>
