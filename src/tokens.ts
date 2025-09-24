@@ -12,12 +12,18 @@ const breakpoints = {
 const colors = {
   primary: "#3ca1f5",
   primaryHover: darken(0.05, "#3ca1f5"),
-  secondary: "#f1f5f9",
-  secondaryHover: darken(0.05, "#f1f5f9"),
+  primaryActive: darken(0.1, "#3ca1f5"),
+  secondary: "#edf2f6",
+  secondaryHover: darken(0.05, "#edf2f6"),
+  secondaryActive: darken(0.1, "#edf2f6"),
+  tertiary: "#97a5ba",
+  tertiaryHover: darken(0.05, "#97a5ba"),
+  tertiaryActive: darken(0.1, "#97a5ba"),
   white: "#FFFFFF",
+  border: "#e8eaee",
   disabled: "#C2C2C2",
-  bgPrimary: "#F5F5F5",
-  bgSecondary: "#f6f7f9",
+  bgPrimary: "#f6f7f9",
+  bgSecondary: "#f1f5f9",
   transparent: "transparent",
 } as const;
 

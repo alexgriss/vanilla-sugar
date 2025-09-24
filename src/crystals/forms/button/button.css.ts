@@ -1,10 +1,9 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
-import { buttonSizes, buttonVariants } from "../types";
-
 import { sprinkles } from "../../../sprinkles.css";
 import { vars } from "../../../theme.css";
+import { buttonSizes, buttonVariants } from "../types";
 
 const disabledStyles = styleVariants({
   primary: {
@@ -55,25 +54,41 @@ const primaryStyles = [
       "&:hover:not(:disabled)": {
         backgroundColor: vars.colors.primaryHover,
       },
+      "&:active:not(:disabled)": {
+        backgroundColor: vars.colors.primaryActive,
+      },
     },
   }),
 ];
 
 const secondaryStyles = [
-  sprinkles({ bg: "secondary", color: "white" }),
+  sprinkles({ bg: "secondary", color: "tertiary" }),
   disabledStyles.primary,
   style({
     selectors: {
       "&:hover:not(:disabled)": {
         backgroundColor: vars.colors.secondaryHover,
       },
+      "&:active:not(:disabled)": {
+        backgroundColor: vars.colors.secondaryActive,
+      },
     },
   }),
 ];
 
 const ghostStyles = [
-  sprinkles({ bg: "transparent", color: "secondary" }),
+  sprinkles({ bg: "transparent", color: "tertiary" }),
   disabledStyles.secondary,
+  style({
+    selectors: {
+      "&:hover:not(:disabled)": {
+        backgroundColor: vars.colors.tertiaryHover,
+      },
+      "&:active:not(:disabled)": {
+        backgroundColor: vars.colors.tertiaryActive,
+      },
+    },
+  }),
 ];
 
 const smallStyles = sprinkles({ p: 8, br: 8, fs: "xs" });
