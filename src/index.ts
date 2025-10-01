@@ -1,9 +1,15 @@
-// Main library exports
-export * from "./crystals";
-
-// Re-export CSS files for easy importing
 import "./global.css";
-import "./reset.css";
 
-export { sprinkles } from "./sprinkles.css";
+export {
+  Box,
+  Button,
+  Center,
+  Flex,
+  HStack,
+  Header,
+  IconButton,
+  Text,
+  VStack,
+} from "./crystals";
+
 export { vars } from "./theme.css";

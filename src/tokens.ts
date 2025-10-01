@@ -27,7 +27,6 @@ const colors = {
   bgSecondary: "#f0f0f0",
   textDisabled: "#686c7c",
   textAccent: "#0A0D1C",
-  codeEditorGutters: "#000000",
 } as const;
 
 const spacings = {
