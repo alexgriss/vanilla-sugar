@@ -8,22 +8,22 @@ import { buttonSizes, buttonVariants } from "../types";
 const disabledStyles = styleVariants({
   primary: {
     ":disabled": {
-      backgroundColor: vars.colors.disabled,
-      color: vars.colors.white,
+      backgroundColor: vars.colors.stateDisabled,
+      color: vars.colors.neutralWhite,
       selectors: {
         "&:hover": {
-          backgroundColor: vars.colors.disabled,
+          backgroundColor: vars.colors.stateDisabled,
         },
       },
     },
   },
   secondary: {
     ":disabled": {
-      backgroundColor: vars.colors.white,
-      color: vars.colors.disabled,
+      backgroundColor: vars.colors.neutralWhite,
+      color: vars.colors.stateDisabled,
       selectors: {
         "&:hover": {
-          backgroundColor: vars.colors.white,
+          backgroundColor: vars.colors.neutralWhite,
         },
       },
     },
@@ -47,7 +47,7 @@ const baseButtonStyles = [
 ];
 
 const primaryStyles = [
-  sprinkles({ bg: "primary", color: "white" }),
+  sprinkles({ bg: "primaryBase", color: "neutralWhite" }),
   disabledStyles.primary,
   style({
     selectors: {
@@ -62,7 +62,7 @@ const primaryStyles = [
 ];
 
 const secondaryStyles = [
-  sprinkles({ bg: "secondary", color: "tertiary" }),
+  sprinkles({ bg: "secondaryBase", color: "tertiaryBase" }),
   disabledStyles.primary,
   style({
     selectors: {
@@ -76,8 +76,8 @@ const secondaryStyles = [
   }),
 ];
 
-const ghostStyles = [
-  sprinkles({ bg: "transparent", color: "tertiary" }),
+const tertiaryStyles = [
+  sprinkles({ bg: "tertiaryBase", color: "neutralWhite" }),
   disabledStyles.secondary,
   style({
     selectors: {
@@ -91,9 +91,9 @@ const ghostStyles = [
   }),
 ];
 
-const smallStyles = sprinkles({ p: 8, br: 8, fs: "xs" });
-const mediumStyles = sprinkles({ p: 14, br: 12, fs: "sm" });
-const largeStyles = sprinkles({ p: 16, br: 12, fs: "md" });
+const smallStyles = sprinkles({ p: 2, br: 2, fs: "sm" });
+const mediumStyles = sprinkles({ p: 3, br: 3, fs: "md" });
+const largeStyles = sprinkles({ p: 4, br: 3, fs: "lg" });
 
 export const button = recipe({
   base: baseButtonStyles,
@@ -101,7 +101,7 @@ export const button = recipe({
     variant: {
       [buttonVariants.primary]: primaryStyles,
       [buttonVariants.secondary]: secondaryStyles,
-      [buttonVariants.ghost]: ghostStyles,
+      [buttonVariants.tertiary]: tertiaryStyles,
     },
     size: {
       [buttonSizes.small]: smallStyles,

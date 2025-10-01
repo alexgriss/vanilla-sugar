@@ -2,7 +2,7 @@ import "./reset.css";
 
 import { globalStyle } from "@vanilla-extract/css";
 
-import { fontVars } from "./fonts.css";
+import { vars } from "./theme.css";
 
 globalStyle("html, body", {
   margin: 0,
@@ -10,7 +10,7 @@ globalStyle("html, body", {
 });
 
 globalStyle("body", {
-  fontFamily: `${fontVars.IBMPlexSans} !important`,
+  fontFamily: `${vars.fontFamilies.PTSans} !important`,
 });
 
 globalStyle("body:has(dialog[open])", {

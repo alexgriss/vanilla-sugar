@@ -14,7 +14,7 @@ const meta = {
 } satisfies Meta<typeof VStack>;
 
 export const Basic = (args: IVStackProps) => (
-  <VStack spacing={16} {...args}>
+  <VStack spacing={4} {...args}>
     <Button variant="primary" size="large">
       Button 1
     </Button>

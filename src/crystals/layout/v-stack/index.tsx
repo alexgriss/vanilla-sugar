@@ -12,6 +12,7 @@ export const VStack = (props: IVStackProps) => {
     ...restProps,
     gap: spacing,
     fd: "column" as const,
+    width: "full" as const,
     className,
   };
 

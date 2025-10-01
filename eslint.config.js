@@ -1,6 +1,8 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
+import eslintConfigPrettier from "eslint-config-prettier";
+import prettierPlugin from "eslint-plugin-prettier";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
@@ -9,37 +11,8 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 const stylisticRules = {
-  "@stylistic/array-bracket-spacing": ["warn", "never"],
-  "@stylistic/arrow-parens": ["warn", "as-needed"],
-  "@stylistic/arrow-spacing": "warn",
-  "@stylistic/block-spacing": "warn",
-  "@stylistic/brace-style": "warn",
-  "@stylistic/comma-dangle": ["warn", "always-multiline"],
-  "@stylistic/no-trailing-spaces": "warn",
-  "@stylistic/dot-location": ["warn", "property"],
-  "@stylistic/eol-last": "warn",
-  "@stylistic/no-multiple-empty-lines": ["warn", { max: 1, maxEOF: 0 }],
-  "@stylistic/semi": ["warn", "always"],
-  "@stylistic/quotes": ["warn", "double", { avoidEscape: true }],
-  "@stylistic/indent": ["warn", 2],
-  "@stylistic/max-len": [
-    "warn",
-    {
-      code: 80,
-      ignoreComments: true,
-      ignoreUrls: true,
-      ignoreStrings: true,
-      ignoreTemplateLiterals: true,
-      ignoreRegExpLiterals: true,
-    },
-  ],
-  "@stylistic/multiline-ternary": ["warn", "always-multiline"],
-  "@stylistic/no-confusing-arrow": "warn",
-  "@stylistic/no-mixed-spaces-and-tabs": "warn",
-  "@stylistic/no-multi-spaces": "warn",
-  "@stylistic/object-curly-spacing": ["warn", "always"],
-  "@stylistic/wrap-regex": "warn",
-  "@stylistic/jsx-newline": "warn",
+  // Оставляем только правила, которые не конфликтуют с Prettier
+  "@stylistic/jsx/jsx-newline": "warn",
   "@stylistic/padding-line-between-statements": [
     "warn",
     {
@@ -95,13 +68,8 @@ export default tseslint.config(
     ignores: ["dist/**/*"],
   },
   tseslint.configs.recommended,
-  {
-    files: ["**/*.{ts,tsx}"],
-    plugins: {
-      "@stylistic": stylistic,
-    },
-    rules: stylisticRules,
-  },
+  // Отключаем конфликтующие с Prettier правила ранним слоем
+  eslintConfigPrettier,
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
@@ -111,14 +79,31 @@ export default tseslint.config(
       reactRefresh.configs.vite,
     ],
     plugins: {
+      react: react,
+      "react-hooks": reactHooks,
+      "@stylistic": stylistic,
+      "@stylistic/jsx": stylisticJsx,
       "simple-import-sort": simpleImportSort,
+      prettier: prettierPlugin,
     },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
     },
     rules: {
-      "@typescript-eslint/no-empty-object-type": "off",
+      ...reactHooks.configs.recommended.rules,
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-no-target-blank": "off",
+      "react/no-unknown-property": ["error", { ignore: ["class"] }],
+      "arrow-body-style": "off",
+      "prefer-arrow-callback": "off",
+      "no-console": [
+        "warn",
+        {
+          allow: ["warn", "error"],
+        },
+      ],
+      ...stylisticRules,
       "simple-import-sort/imports": [
         "warn",
         {
@@ -148,7 +133,9 @@ export default tseslint.config(
           ],
         },
       ],
+      // Запускаем Prettier как правило ESLint
+      "prettier/prettier": "warn",
     },
   },
-  storybook.configs["flat/recommended"]
+  storybook.configs["flat/recommended"],
 );

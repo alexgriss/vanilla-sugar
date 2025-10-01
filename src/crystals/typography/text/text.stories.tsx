@@ -16,8 +16,7 @@ export const Basic = (args: ITextProps) => <Text {...args}>Hello, world!</Text>;
 export const WithInlineText = (args: ITextProps) => (
   <Text {...args}>
     Hello,{" "}
-
-    <Text as="span" color="primary">
+    <Text as="span" color="primaryBase">
       world!
     </Text>
   </Text>

@@ -1,7 +1,7 @@
 export const buttonVariants = {
   primary: "primary",
   secondary: "secondary",
-  ghost: "ghost",
+  tertiary: "tertiary",
 } as const;
 
 export type ButtonVariant =

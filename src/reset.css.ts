@@ -1,13 +1,5 @@
 import { globalStyle } from "@vanilla-extract/css";
 
-globalStyle(
-  "*:where(:not(html, body, iframe, canvas, img, svg, video, audio):not(svg *, symbol *))",
-  {
-    all: "unset",
-    display: "revert",
-  },
-);
-
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
 });
@@ -20,10 +12,13 @@ globalStyle("html", {
 
 globalStyle("a, button", {
   cursor: "pointer",
-});
-
-globalStyle("ol, ul, menu, summary", {
-  listStyle: "none",
+  border: "none",
+  outline: "none",
+  background: "none",
+  padding: 0,
+  margin: 0,
+  fontSize: "100%",
+  fontWeight: "normal",
 });
 
 globalStyle("img", {

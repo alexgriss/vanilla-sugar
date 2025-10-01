@@ -14,7 +14,7 @@ const meta = {
 } satisfies Meta<typeof HStack>;
 
 export const Basic = (args: IHStackProps) => (
-  <HStack spacing={16} {...args}>
+  <HStack spacing={4} {...args}>
     <Button variant="primary" size="large">
       Button 1
     </Button>

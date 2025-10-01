@@ -24,6 +24,7 @@ const fontProperties = defineProperties({
     lh: ["lineHeight"],
     ta: ["textAlign"],
     tt: ["textTransform"],
+    ff: ["fontFamily"],
   },
 });
 
@@ -35,8 +36,8 @@ const responsiveProperties = defineProperties({
   },
   conditions: {
     mobile: {},
-    tablet: { "@media": "screen and (min-width: 768px)" },
-    desktop: { "@media": "screen and (min-width: 1024px)" },
+    tablet: { "@media": "screen and (min-width: 48rem)" }, // ~768px
+    desktop: { "@media": "screen and (min-width: 64rem)" }, // ~1024px
   },
   defaultCondition: "mobile",
   responsiveArray: ["mobile", "tablet", "desktop"],

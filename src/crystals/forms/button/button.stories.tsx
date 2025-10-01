@@ -43,8 +43,8 @@ const ButtonContainer = ({ children, ...props }: IFlexProps) => (
     fd="column"
     ai="center"
     jc="center"
-    gap={16}
-    p={16}
+    gap={4}
+    p={4}
     style={{ width: "200px", backgroundColor: "#F8F8F8" }}
     {...props}
   >
@@ -59,49 +59,49 @@ export const Large: Story = {
 
       <Button variant="secondary" size="large" {...args} />
 
-      <Button variant="ghost" size="large" {...args} />
+      <Button variant="tertiary" size="large" {...args} />
     </ButtonContainer>
   ),
 };
 
 export const Medium: Story = {
-  render: args => (
+  render: (args) => (
     <ButtonContainer>
       <Button variant="primary" size="medium" {...args} />
 
       <Button variant="secondary" size="medium" {...args} />
 
-      <Button variant="ghost" size="medium" {...args} />
+      <Button variant="tertiary" size="medium" {...args} />
     </ButtonContainer>
   ),
 };
 
 export const Small: Story = {
-  render: args => (
+  render: (args) => (
     <ButtonContainer>
       <Button variant="primary" size="small" {...args} />
 
       <Button variant="secondary" size="small" {...args} />
 
-      <Button variant="ghost" size="small" {...args} />
+      <Button variant="tertiary" size="small" {...args} />
     </ButtonContainer>
   ),
 };
 
 export const Disabled: Story = {
-  render: args => (
+  render: (args) => (
     <ButtonContainer>
       <Button variant="primary" size="large" disabled {...args} />
 
       <Button variant="secondary" size="large" disabled {...args} />
 
-      <Button variant="ghost" size="large" disabled {...args} />
+      <Button variant="tertiary" size="large" disabled {...args} />
     </ButtonContainer>
   ),
 };
 
 export const WithLeftIcon: Story = {
-  render: args => (
+  render: (args) => (
     <ButtonContainer>
       <Button
         variant="primary"
@@ -121,7 +121,7 @@ export const WithLeftIcon: Story = {
 };
 
 export const WithRightIcon: Story = {
-  render: args => (
+  render: (args) => (
     <ButtonContainer>
       <Button
         variant="primary"

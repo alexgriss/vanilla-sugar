@@ -21,11 +21,11 @@ const preview: Preview = {
     },
   },
   decorators: [
-    Story => (
+    (Story) => (
       <div
         style={{
           fontFamily:
-            'Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+            'PT Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
           fontSize: "14px",
           lineHeight: "1.5",
         }}
