@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
-import { Box, type IBoxProps } from ".";
+import { Box } from "./box";
+import type { IBoxProps } from "./types";
 
 const meta = {
   title: "Crystals/Layout/Box",
@@ -12,7 +13,7 @@ const meta = {
 } satisfies Meta<typeof Box>;
 
 export const Basic = (args: IBoxProps) => (
-  <Box bg="primary" p={8} style={{ width: "200px" }} {...args}>
+  <Box bg="primary" p={2} style={{ width: "200px" }} {...args}>
     1
   </Box>
 );

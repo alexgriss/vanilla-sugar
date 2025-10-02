@@ -2,7 +2,8 @@ import type { Meta } from "@storybook/react-vite";
 
 import { Button } from "../../forms";
 
-import { type IVStackProps, VStack } from ".";
+import type { IVStackProps } from "./types";
+import { VStack } from "./v-stack";
 
 const meta = {
   title: "Crystals/Layout/VStack",
@@ -14,10 +15,11 @@ const meta = {
 } satisfies Meta<typeof VStack>;
 
 export const Basic = (args: IVStackProps) => (
-  <VStack spacing={16} {...args}>
+  <VStack spacing={4} {...args}>
     <Button variant="primary" size="large">
       Button 1
     </Button>
+
     <Button variant="secondary" size="large">
       Button 2
     </Button>

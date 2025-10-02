@@ -21,10 +21,10 @@ const fontProperties = defineProperties({
   shorthands: {
     fw: ["fontWeight"],
     fs: ["fontSize"],
-    ff: ["fontFamily"],
     lh: ["lineHeight"],
     ta: ["textAlign"],
     tt: ["textTransform"],
+    ff: ["fontFamily"],
   },
 });
 
@@ -36,8 +36,8 @@ const responsiveProperties = defineProperties({
   },
   conditions: {
     mobile: {},
-    tablet: { "@media": "screen and (min-width: 768px)" },
-    desktop: { "@media": "screen and (min-width: 1024px)" },
+    tablet: { "@media": "screen and (min-width: 48rem)" }, // ~768px
+    desktop: { "@media": "screen and (min-width: 64rem)" }, // ~1024px
   },
   defaultCondition: "mobile",
   responsiveArray: ["mobile", "tablet", "desktop"],
@@ -76,7 +76,7 @@ const responsiveProperties = defineProperties({
 export const sprinkles = createSprinkles(
   colorProperties,
   fontProperties,
-  responsiveProperties
+  responsiveProperties,
 );
 
 export type Sprinkles = Parameters<typeof sprinkles>[0];

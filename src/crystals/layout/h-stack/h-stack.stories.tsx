@@ -2,7 +2,8 @@ import type { Meta } from "@storybook/react-vite";
 
 import { Button } from "../../forms";
 
-import { HStack, type IHStackProps } from ".";
+import { HStack } from "./h-stack";
+import type { IHStackProps } from "./types";
 
 const meta = {
   title: "Crystals/Layout/HStack",
@@ -14,10 +15,11 @@ const meta = {
 } satisfies Meta<typeof HStack>;
 
 export const Basic = (args: IHStackProps) => (
-  <HStack spacing={16} {...args}>
+  <HStack spacing={4} {...args}>
     <Button variant="primary" size="large">
       Button 1
     </Button>
+
     <Button variant="secondary" size="large">
       Button 2
     </Button>

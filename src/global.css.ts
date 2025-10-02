@@ -1,7 +1,8 @@
+import "./reset.css";
+
 import { globalStyle } from "@vanilla-extract/css";
 
-import "./reset.css";
-import "./fonts.css";
+import { vars } from "./theme.css";
 
 globalStyle("html, body", {
   margin: 0,
@@ -9,7 +10,7 @@ globalStyle("html, body", {
 });
 
 globalStyle("body", {
-  fontFamily: "var(--font-manrope) !important",
+  fontFamily: `${vars.fontFamilies.PTSans} !important`,
 });
 
 globalStyle("body:has(dialog[open])", {

@@ -6,114 +6,121 @@ const breakpoints = {
   md: "48em",
   lg: "62em",
   xl: "80em",
-  "2xl": "96em",
+  xxl: "96em",
 } as const;
 
 const colors = {
-  primary: "#78B64C",
-  primaryHover: darken(0.05, "#78B64C"),
-  secondary: "#3C3C3C",
-  secondaryHover: darken(0.05, "#3C3C3C"),
-  tertiary: "#EDEDED",
-  tertiaryHover: darken(0.05, "#EDEDED"),
-  white: "#FFFFFF",
-  disabled: "#C2C2C2",
-  whitesmoke: "#F5F5F5",
-  transparent: "transparent",
+  primaryBase: "#e45649",
+  primaryHover: darken(0.05, "#e45649"),
+  primaryActive: darken(0.1, "#e45649"),
+  secondaryBase: "#e6edf2",
+  secondaryHover: darken(0.05, "#e6edf2"),
+  secondaryActive: darken(0.1, "#e6edf2"),
+  tertiaryBase: "#97a5ba",
+  tertiaryHover: darken(0.05, "#97a5ba"),
+  tertiaryActive: darken(0.1, "#97a5ba"),
+  whiteBase: "#fcfcfc",
+  whiteHover: darken(0.05, "#fcfcfc"),
+  whiteActive: darken(0.1, "#fcfcfc"),
+  neutralWhite: "#FFFFFF",
+  neutralTransparent: "transparent",
+  borderBase: "#e8eaee",
+  stateDisabled: "#C2C2C2",
+  bgPrimary: "#f6f7f9",
+  bgSecondary: "#f0f0f0",
+  bgCodeEditor: "#292937",
+  bgCodeEditorGutters: "#1E1E2E",
+  textCodeEditor: "#D9E0EE",
+  textCodeEditorGutters: "#807c97",
+  textDisabled: "#686c7c",
+  textAccent: "#0A0D1C",
 } as const;
 
 const spacings = {
-  0: "0px",
-  2: "2px",
-  4: "4px",
-  6: "6px",
-  8: "8px",
-  10: "10px",
-  12: "12px",
-  14: "14px",
-  16: "16px",
-  18: "18px",
-  20: "20px",
-  22: "22px",
-  24: "24px",
-  26: "26px",
-  28: "28px",
-  30: "30px",
-  32: "32px",
-} as const;
-
-const fontWeights = {
-  normal: "400",
-  medium: "500",
-  bold: "700",
-} as const;
-
-const fontSizes = {
-  "2xl": "24px",
-  xl: "20px",
-  lg: "18px",
-  md: "16px",
-  sm: "14px",
-  xs: "12px",
-} as const;
-
-const lineHeights = {
-  "2xl": "2",
-  xl: "1.75",
-  lg: "1.5",
-  md: "1.25",
-  sm: "1",
+  0: "0",
+  1: "0.25rem", // 4px
+  2: "0.5rem", // 8px
+  3: "0.75rem", // 12px
+  4: "1rem", // 16px
+  5: "1.25rem", // 20px
+  6: "1.5rem", // 24px
+  7: "1.75rem", // 28px
+  8: "2rem", // 32px
 } as const;
 
 const fontFamilies = {
-  manrope: `var(--font-manrope), Arial, sans-serif`,
-  playfairDisplay: `var(--font-playfair-display), Arial, sans-serif`,
+  PTSans: "'PT Sans', sans-serif",
+  mono: "'JetBrains Mono', monospace",
+} as const;
+
+const fontWeights = {
+  light: "300",
+  normal: "400",
+  medium: "500",
+  bold: "700",
+  black: "900",
+} as const;
+
+const fontSizes = {
+  xxs: "0.625rem", // 10px
+  xs: "0.75rem", // 12px
+  sm: "0.875rem", // 14px
+  md: "1rem", // 16px
+  lg: "1.125rem", // 18px
+  xl: "1.25rem", // 20px
+  "2xl": "1.5rem", // 24px
+  "3xl": "2rem", // 32px
+  "4xl": "2.5rem", // 40px
+  "5xl": "3rem", // 48px
+  "6xl": "4rem", // 64px
+
+  h1: "1.75rem", // 28px
+  h2: "1.375rem", // 22px
+  h3: "1.125rem", // 18px
+  h4: "1rem", // 16px
+  h5: "0.875rem", // 14px
+  h6: "0.75rem", // 12px
+} as const;
+
+const lineHeights = {
+  body: "1.6",
+  h1: "1.3",
+  h2: "1.35",
+  h3: "1.4",
+  h4: "1.4",
+  h5: "1.4",
+  h6: "1.4",
 } as const;
 
 const sizes = {
-  0: "0px",
-  2: "2px",
-  4: "4px",
-  6: "6px",
-  8: "8px",
-  10: "10px",
-  12: "12px",
-  14: "14px",
-  16: "16px",
-  18: "18px",
-  20: "20px",
-  22: "22px",
-  24: "24px",
-  26: "26px",
-  28: "28px",
-  30: "30px",
-  32: "32px",
-  40: "40px",
-  48: "48px",
-  56: "56px",
-  64: "64px",
-  80: "80px",
-  96: "96px",
-  128: "128px",
-  160: "160px",
-  192: "192px",
-  224: "224px",
-  256: "256px",
-  auto: "auto",
+  // Icons
+  iconSm: "1rem", // 16px
+  iconMd: "1.5rem", // 24px
+  iconLg: "2rem", // 32px
+
+  // Layout widths
+  containerSm: "30rem", // 480px
+  containerMd: "48rem", // 768px
+  containerLg: "64rem", // 1024px
+  containerXl: "80rem", // 1280px
+
+  // Specials
   full: "100%",
-  screen: "100vw",
-  min: "min-content",
-  max: "max-content",
+  screenW: "100vw",
+  screenH: "100vh",
+  auto: "auto",
   fit: "fit-content",
+  max: "max-content",
+  min: "min-content",
 } as const;
 
 export const tokens = {
   breakpoints,
   colors,
   spacings,
+  fontFamilies,
   fontWeights,
   fontSizes,
   lineHeights,
-  fontFamilies,
   sizes,
 } as const;

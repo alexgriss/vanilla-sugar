@@ -2,9 +2,4 @@ node_modules
 dist
 build
 coverage
-.storybook-static
-*.min.js
-*.min.css
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+

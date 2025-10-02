@@ -31,14 +31,62 @@ A modern, type-safe UI component library built with React and Vanilla Extract. V
 
 > **Note**: This package is currently in development and not yet published to npm.
 
+### Локальная установка
+
+Для использования библиотеки в другом проекте локально:
+
 ```bash
-# Clone the repository
+# 1. Клонируйте репозиторий
 git clone https://github.com/your-username/vanilla-sugar.git
 cd vanilla-sugar
 
-# Install dependencies
+# 2. Установите зависимости и соберите библиотеку
 npm install
+# или если используете pnpm
+pnpm install
+
+npm run build
+# или
+pnpm build
+
+# 3. В вашем проекте установите библиотеку
+npm install /путь/к/vanilla-sugar
+# или для pnpm
+pnpm add /путь/к/vanilla-sugar
+
+# Для разработки используйте link
+npm link
+# или
+pnpm link --global
+# затем в вашем проекте: npm link vanilla-sugar или pnpm link vanilla-sugar
 ```
+
+### Использование в проекте
+
+```tsx
+// Импортируйте компоненты
+import { Box, Button, Text, HStack, VStack } from "vanilla-sugar";
+
+// Обязательно импортируйте стили!
+import "vanilla-sugar/global.css";
+
+function App() {
+  return (
+    <Box p={24}>
+      <VStack spacing={16} ai="center">
+        <Text fs="2xl" fw="bold" color="primary">
+          Мой проект
+        </Text>
+        <Button variant="primary" size="large">
+          Кнопка
+        </Button>
+      </VStack>
+    </Box>
+  );
+}
+```
+
+📖 **Подробная инструкция**: См. [LOCAL_INSTALLATION.md](./LOCAL_INSTALLATION.md) для полного руководства по локальной установке.
 
 ## 🎯 Usage
 

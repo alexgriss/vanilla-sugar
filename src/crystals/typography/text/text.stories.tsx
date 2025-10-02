@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
-import { type ITextProps, Text } from ".";
+import { Text } from "./text";
+import type { ITextProps } from "./types";
 
 const meta = {
   title: "Crystals/Typography/Text",
@@ -16,7 +17,7 @@ export const Basic = (args: ITextProps) => <Text {...args}>Hello, world!</Text>;
 export const WithInlineText = (args: ITextProps) => (
   <Text {...args}>
     Hello,{" "}
-    <Text as="span" color="primary">
+    <Text as="span" color="primaryBase">
       world!
     </Text>
   </Text>

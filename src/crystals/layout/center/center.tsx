@@ -1,8 +1,5 @@
-import { Flex, type IFlexProps } from "../flex";
-
-export interface ICenterProps extends IFlexProps {
-  size?: string;
-}
+import { Flex } from "../flex/flex";
+import type { ICenterProps } from "./types";
 
 export const Center = (props: ICenterProps) => {
   const { className, children, ...restProps } = props;

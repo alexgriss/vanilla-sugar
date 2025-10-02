@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
-import { Center, type ICenterProps } from ".";
+import { Center } from "./center";
+import type { ICenterProps } from "./types";
 
 const meta = {
   title: "Crystals/Layout/Center",
@@ -12,19 +13,19 @@ const meta = {
 } satisfies Meta<typeof Center>;
 
 export const WithHeightOnly = (args: ICenterProps) => (
-  <Center h={128} gap={16} bg="primary" {...args}>
+  <Center h="containerSm" gap={4} bg="primaryBase" {...args}>
     123
   </Center>
 );
 
 export const WithWidthOnly = (args: ICenterProps) => (
-  <Center w={128} gap={16} bg="primary" {...args}>
+  <Center w="containerSm" gap={4} bg="primaryBase" {...args}>
     123
   </Center>
 );
 
 export const WithHeightAndWidth = (args: ICenterProps) => (
-  <Center h={128} w={128} gap={16} bg="primary" {...args}>
+  <Center h="containerSm" w="containerSm" gap={4} bg="primaryBase" {...args}>
     123
   </Center>
 );
