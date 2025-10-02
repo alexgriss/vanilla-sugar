@@ -2,7 +2,8 @@ import type { Meta } from "@storybook/react-vite";
 
 import { Button } from "../../forms";
 
-import { HStack, type IHStackProps } from ".";
+import { HStack } from "./h-stack";
+import type { IHStackProps } from "./types";
 
 const meta = {
   title: "Crystals/Layout/HStack",

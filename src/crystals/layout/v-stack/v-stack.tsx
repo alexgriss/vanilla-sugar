@@ -1,9 +1,5 @@
-import { vars } from "../../../theme.css";
-import { Flex, type IFlexProps } from "../flex";
-
-export interface IVStackProps extends IFlexProps {
-  spacing?: keyof typeof vars.spacings;
-}
+import { Flex } from "../flex/flex";
+import type { IVStackProps } from "./types";
 
 export const VStack = (props: IVStackProps) => {
   const { className, children, spacing, ...restProps } = props;

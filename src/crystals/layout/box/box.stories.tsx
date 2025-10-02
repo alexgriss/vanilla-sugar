@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
-import { Box, type IBoxProps } from ".";
+import { Box } from "./box";
+import type { IBoxProps } from "./types";
 
 const meta = {
   title: "Crystals/Layout/Box",

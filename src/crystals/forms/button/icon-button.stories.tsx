@@ -1,9 +1,9 @@
 import type { Meta } from "@storybook/react-vite";
 
 import { Flex, type IFlexProps } from "../../layout";
-import { buttonSizes, buttonVariants } from "../types";
+import { buttonSizes, buttonVariants, type IIconButtonProps } from "./types";
 
-import { IconButton, type IIconButtonProps } from ".";
+import { IconButton } from "./button";
 
 import SearchIcon from "./search-icon.svg?react";
 
@@ -51,6 +51,10 @@ export const Basic = (args: IIconButtonProps) => (
     <IconButton variant="tertiary" size="small" {...args}>
       <SearchIcon width={20} height={20} />
     </IconButton>
+
+    <IconButton variant="white" size="large" {...args}>
+      <SearchIcon width={20} height={20} />
+    </IconButton>
   </ButtonContainer>
 );
 
@@ -65,6 +69,10 @@ export const Disabled = (args: IIconButtonProps) => (
     </IconButton>
 
     <IconButton variant="tertiary" size="small" disabled {...args}>
+      <SearchIcon width={20} height={20} />
+    </IconButton>
+
+    <IconButton variant="white" size="large" disabled {...args}>
       <SearchIcon width={20} height={20} />
     </IconButton>
   </ButtonContainer>

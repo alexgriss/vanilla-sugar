@@ -5,10 +5,11 @@ export {
   Button,
   Center,
   Flex,
-  HStack,
   Header,
+  HStack,
   IconButton,
   Text,
+  Tooltip,
   VStack,
 } from "./crystals";
 

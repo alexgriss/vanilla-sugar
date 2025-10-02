@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
-import { Center, type ICenterProps } from ".";
+import { Center } from "./center";
+import type { ICenterProps } from "./types";
 
 const meta = {
   title: "Crystals/Layout/Center",

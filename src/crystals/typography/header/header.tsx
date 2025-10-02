@@ -1,14 +1,9 @@
 import clsx from "clsx";
 
-import type { ITextProps } from "../text";
-import { Text } from "../text";
+import { Text } from "../text/text";
 
 import { headerVariants } from "./header.css";
-import type { THeaderTag } from "./types";
-
-export interface IHeaderProps extends ITextProps {
-  as?: THeaderTag;
-}
+import type { IHeaderProps } from "./types";
 
 export const Header = (props: IHeaderProps) => {
   const { className, children, as = "h1", ...restProps } = props;

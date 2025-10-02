@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
-import { type ITextProps, Text } from ".";
+import { Text } from "./text";
+import type { ITextProps } from "./types";
 
 const meta = {
   title: "Crystals/Typography/Text",

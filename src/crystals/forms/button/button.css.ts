@@ -3,7 +3,7 @@ import { recipe } from "@vanilla-extract/recipes";
 
 import { sprinkles } from "../../../sprinkles.css";
 import { vars } from "../../../theme.css";
-import { buttonSizes, buttonVariants } from "../types";
+import { buttonSizes, buttonVariants } from "./types";
 
 const disabledStyles = styleVariants({
   primary: {
@@ -91,9 +91,24 @@ const tertiaryStyles = [
   }),
 ];
 
-const smallStyles = sprinkles({ p: 2, br: 2, fs: "sm" });
-const mediumStyles = sprinkles({ p: 3, br: 3, fs: "md" });
-const largeStyles = sprinkles({ p: 4, br: 3, fs: "lg" });
+const whiteStyles = [
+  sprinkles({ bg: "whiteBase", color: "tertiaryBase" }),
+  disabledStyles.secondary,
+  style({
+    selectors: {
+      "&:hover:not(:disabled)": {
+        backgroundColor: vars.colors.whiteHover,
+      },
+      "&:active:not(:disabled)": {
+        backgroundColor: vars.colors.whiteActive,
+      },
+    },
+  }),
+];
+
+const smallStyles = sprinkles({ p: 2, br: 1, fs: "sm" });
+const mediumStyles = sprinkles({ p: 3, br: 2, fs: "md" });
+const largeStyles = sprinkles({ p: 4, br: 2, fs: "lg" });
 
 export const button = recipe({
   base: baseButtonStyles,
@@ -102,6 +117,7 @@ export const button = recipe({
       [buttonVariants.primary]: primaryStyles,
       [buttonVariants.secondary]: secondaryStyles,
       [buttonVariants.tertiary]: tertiaryStyles,
+      [buttonVariants.white]: whiteStyles,
     },
     size: {
       [buttonSizes.small]: smallStyles,

@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react-vite";
 
-import { Header, type IHeaderProps } from ".";
+import { Header } from "./header";
+import type { IHeaderProps } from "./types";
 
 const meta = {
   title: "Crystals/Typography/Header",

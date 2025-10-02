@@ -2,7 +2,8 @@ import type { Meta } from "@storybook/react-vite";
 
 import { Button } from "../../forms";
 
-import { Flex, type IFlexProps } from ".";
+import { Flex } from "./flex";
+import type { IFlexProps } from "./types";
 
 const meta = {
   title: "Crystals/Layout/Flex",

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Flex, type IFlexProps } from "../../layout";
-import { buttonSizes, buttonVariants } from "../types";
+import { buttonSizes, buttonVariants, type IButtonProps } from "./types";
 
-import { Button, type IButtonProps } from ".";
+import { Button } from "./button";
 
 import SearchIcon from "./search-icon.svg?react";
 
@@ -60,6 +60,8 @@ export const Large: Story = {
       <Button variant="secondary" size="large" {...args} />
 
       <Button variant="tertiary" size="large" {...args} />
+
+      <Button variant="white" size="large" {...args} />
     </ButtonContainer>
   ),
 };
@@ -72,6 +74,8 @@ export const Medium: Story = {
       <Button variant="secondary" size="medium" {...args} />
 
       <Button variant="tertiary" size="medium" {...args} />
+
+      <Button variant="white" size="medium" {...args} />
     </ButtonContainer>
   ),
 };
@@ -84,6 +88,8 @@ export const Small: Story = {
       <Button variant="secondary" size="small" {...args} />
 
       <Button variant="tertiary" size="small" {...args} />
+
+      <Button variant="white" size="small" {...args} />
     </ButtonContainer>
   ),
 };
@@ -96,6 +102,8 @@ export const Disabled: Story = {
       <Button variant="secondary" size="large" disabled {...args} />
 
       <Button variant="tertiary" size="large" disabled {...args} />
+
+      <Button variant="white" size="large" disabled {...args} />
     </ButtonContainer>
   ),
 };
@@ -133,6 +141,13 @@ export const WithRightIcon: Story = {
       <Button
         variant="secondary"
         size="medium"
+        rightIcon={<SearchIcon width={20} height={20} />}
+        {...args}
+      />
+
+      <Button
+        variant="white"
+        size="large"
         rightIcon={<SearchIcon width={20} height={20} />}
         {...args}
       />
