@@ -10,17 +10,17 @@ const breakpoints = {
 } as const;
 
 const colors = {
-  primaryBase: "#e45649",
-  primaryHover: darken(0.05, "#e45649"),
-  primaryActive: darken(0.1, "#e45649"),
+  primaryBase: "#49b3e4",
+  primaryHover: darken(0.075, "#49b3e4"),
+  primaryActive: darken(0.1, "#49b3e4"),
   secondaryBase: "#e6edf2",
-  secondaryHover: darken(0.05, "#e6edf2"),
+  secondaryHover: darken(0.075, "#e6edf2"),
   secondaryActive: darken(0.1, "#e6edf2"),
   tertiaryBase: "#97a5ba",
-  tertiaryHover: darken(0.05, "#97a5ba"),
+  tertiaryHover: darken(0.075, "#97a5ba"),
   tertiaryActive: darken(0.1, "#97a5ba"),
   whiteBase: "#fcfcfc",
-  whiteHover: darken(0.05, "#fcfcfc"),
+  whiteHover: darken(0.075, "#fcfcfc"),
   whiteActive: darken(0.1, "#fcfcfc"),
   neutralWhite: "#FFFFFF",
   neutralTransparent: "transparent",
@@ -57,6 +57,7 @@ const fontWeights = {
   light: "300",
   normal: "400",
   medium: "500",
+  semiBold: "600",
   bold: "700",
   black: "900",
 } as const;

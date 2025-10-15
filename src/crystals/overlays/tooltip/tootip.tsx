@@ -5,6 +5,7 @@ import {
   flip,
   shift,
   useFloating,
+  type Placement,
 } from "@floating-ui/react";
 import clsx from "clsx";
 import {
@@ -15,30 +16,38 @@ import {
   useRef,
   useState,
 } from "react";
+import { createPortal } from "react-dom";
 
 import { Box } from "../../layout";
-import { type ITooltipProps, type TooltipPlacement } from "./types";
+import { type ITooltipProps } from "./types";
 
 import {
-  arrowBottom,
-  arrowLeft,
-  arrowRight,
-  arrowTop,
-  tooltipArrow,
+  tooltipArrowBottomStyles,
+  tooltipArrowLeftStyles,
+  tooltipArrowRightStyles,
+  tooltipArrowStyles,
+  tooltipArrowTopStyles,
+  tooltipStyles,
 } from "./tooltip.css";
 
-const getArrowClass = (placement: TooltipPlacement) => {
-  switch (placement) {
+const getArrowClass = (placement: Placement) => {
+  const basePlacement = placement.split("-")[0] as
+    | "top"
+    | "right"
+    | "bottom"
+    | "left";
+
+  switch (basePlacement) {
     case "top":
-      return arrowTop;
+      return tooltipArrowTopStyles;
     case "bottom":
-      return arrowBottom;
+      return tooltipArrowBottomStyles;
     case "left":
-      return arrowLeft;
+      return tooltipArrowLeftStyles;
     case "right":
-      return arrowRight;
+      return tooltipArrowRightStyles;
     default:
-      return arrowTop;
+      return tooltipArrowTopStyles;
   }
 };
 
@@ -76,6 +85,7 @@ export const Tooltip = (props: ITooltipProps) => {
     placement,
     middleware,
     whileElementsMounted: autoUpdate,
+    strategy: "fixed",
   });
 
   const handleMouseEnter = useCallback(() => {
@@ -114,39 +124,48 @@ export const Tooltip = (props: ITooltipProps) => {
     }[basePlacement];
   }, [basePlacement]);
 
+  const portalContainer =
+    typeof document !== "undefined" ? document.body : null;
+
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
       {triggerElement}
 
-      {isVisible && (
-        <Box
-          ref={refs.setFloating}
-          className={tooltip}
-          style={{
-            position: strategy,
-            top: y ?? 0,
-            left: x ?? 0,
-            zIndex: 1000,
-            ...restProps.style,
-          }}
-          {...restProps}
-        >
-          {tooltip}
+      {isVisible &&
+        portalContainer &&
+        createPortal(
+          <Box
+            ref={refs.setFloating}
+            className={tooltipStyles}
+            style={{
+              position: strategy,
+              top: y ?? 0,
+              left: x ?? 0,
+              zIndex: 1000,
+              ...restProps.style,
+            }}
+            {...restProps}
+          >
+            {tooltip}
 
-          {showArrow && (
-            <div
-              ref={arrowRef}
-              className={clsx(tooltipArrow, getArrowClass(basePlacement))}
-              style={{
-                left: arrow?.x ? `${arrow.x}px` : "",
-                top: arrow?.y ? `${arrow.y}px` : "",
-                [oppositePlacement]: "-4px",
-                transform: "none",
-              }}
-            />
-          )}
-        </Box>
-      )}
+            {showArrow && (
+              <div
+                ref={arrowRef}
+                className={clsx(
+                  tooltipArrowStyles,
+                  getArrowClass(basePlacement),
+                )}
+                style={{
+                  left: arrow?.x ? `${arrow.x}px` : "",
+                  top: arrow?.y ? `${arrow.y}px` : "",
+                  [oppositePlacement]: "-4px",
+                  transform: "none",
+                }}
+              />
+            )}
+          </Box>,
+          portalContainer,
+        )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { tokens } from "../../../tokens";
 
-export const tooltip = style({
+export const tooltipStyles = style({
   padding: `${tokens.spacings[2]} ${tokens.spacings[3]}`,
   backgroundColor: tokens.colors.textAccent,
   color: tokens.colors.neutralWhite,
@@ -18,29 +18,29 @@ export const tooltip = style({
     "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
 });
 
-export const tooltipArrow = style({
+export const tooltipArrowStyles = style({
   position: "absolute",
   width: 0,
   height: 0,
   borderStyle: "solid",
 });
 
-export const arrowTop = style({
+export const tooltipArrowTopStyles = style({
   borderWidth: "4px 4px 0 4px",
   borderColor: `${tokens.colors.textAccent} transparent transparent transparent`,
 });
 
-export const arrowBottom = style({
+export const tooltipArrowBottomStyles = style({
   borderWidth: "0 4px 4px 4px",
   borderColor: `transparent transparent ${tokens.colors.textAccent} transparent`,
 });
 
-export const arrowLeft = style({
+export const tooltipArrowLeftStyles = style({
   borderWidth: "4px 0 4px 4px",
   borderColor: `transparent transparent transparent ${tokens.colors.textAccent}`,
 });
 
-export const arrowRight = style({
+export const tooltipArrowRightStyles = style({
   borderWidth: "4px 4px 4px 0",
   borderColor: `transparent ${tokens.colors.textAccent} transparent transparent`,
 });
